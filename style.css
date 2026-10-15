@@ -1,0 +1,483 @@
+/* Basic page styling for the project foundation. */
+:root {
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background-color: #f3f4f6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: min(100% - 2rem, 960px);
+  margin: 0 auto;
+}
+
+.site-header {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 0.5rem;
+}
+
+.site-header p,
+.site-footer p {
+  margin: 0;
+}
+
+.site-main {
+  flex: 1;
+}
+
+.site-main section {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+}
+
+.site-main h2 {
+  margin-top: 0;
+}
+
+.form-field {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  border: 1px solid #9ca3af;
+  border-radius: 0.25rem;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid #bfdbfe;
+  outline-offset: 2px;
+}
+
+button {
+  color: #ffffff;
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+.validation-message {
+  min-height: 1.25rem;
+  margin: 0.35rem 0 0;
+  color: #b91c1c;
+  font-size: 0.9rem;
+}
+
+.storage-message {
+  min-height: 1.25rem;
+  margin: 0.75rem 0 0;
+  color: #92400e;
+  font-size: 0.9rem;
+}
+
+input[aria-invalid="true"] {
+  border-color: #b91c1c;
+}
+
+.search-field {
+  margin-bottom: 1.5rem;
+}
+
+.book-counts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.book-counts p {
+  padding: 0.75rem;
+  margin: 0;
+  color: #374151;
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+
+.empty-state {
+  margin: 0;
+  color: #4b5563;
+}
+
+.book-list {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.book-item {
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.book-item h3,
+.book-item p {
+  margin: 0;
+}
+
+.book-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.book-status-field {
+  margin-top: 1rem;
+}
+
+.delete-button {
+  margin-top: 1rem;
+  color: #ffffff;
+  background-color: #b91c1c;
+  border-color: #b91c1c;
+}
+
+.delete-button:hover {
+  background-color: #991b1b;
+}
+
+.book-item p + p {
+  margin-top: 0.35rem;
+}
+
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: #4b5563;
+}
+
+/* Reading dashboard theme and responsive layout. */
+:root {
+  --background: #f5f1e8;
+  --surface: #fffdf8;
+  --surface-muted: #f8f5ed;
+  --ink: #24332d;
+  --muted: #66736c;
+  --border: #d9ded5;
+  --primary: #24513f;
+  --primary-dark: #173b2d;
+  --focus: #d7a83f;
+  --danger: #a33a32;
+  --shadow: 0 0.75rem 2rem rgba(36, 51, 45, 0.07);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--ink);
+  background: var(--background);
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 253, 248, 0.9), transparent 28rem),
+    var(--background);
+}
+
+.site-header,
+.site-main,
+.site-footer {
+  width: min(100% - 2rem, 1200px);
+}
+
+.site-header {
+  padding: 3.5rem 0 2.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header h1 {
+  max-width: 22rem;
+  margin: 0 0 0.6rem;
+  color: var(--primary-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.site-header p,
+.site-footer p {
+  color: var(--muted);
+}
+
+.site-header p {
+  max-width: 32rem;
+  font-size: 1.05rem;
+}
+
+.site-main {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: start;
+  padding: 2rem 0;
+}
+
+.site-main section {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: rgba(255, 253, 248, 0.94);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+}
+
+.site-main h2 {
+  margin: 0 0 1.25rem;
+  color: var(--primary-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+}
+
+label {
+  color: var(--ink);
+  font-size: 0.9rem;
+}
+
+input,
+select,
+button {
+  min-height: 3rem;
+  color: var(--ink);
+  background: #ffffff;
+  border-color: #b8c3ba;
+  border-radius: 0.45rem;
+}
+
+input::placeholder {
+  color: #849089;
+}
+
+input:focus,
+select:focus,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button {
+  color: #ffffff;
+  background: var(--primary);
+  border-color: var(--primary);
+  font-weight: 700;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.validation-message {
+  color: #9b2c2c;
+}
+
+.storage-message {
+  color: #805b16;
+}
+
+.book-counts {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.book-counts p {
+  padding: 0.8rem 0.65rem;
+  color: var(--muted);
+  background: var(--surface-muted);
+  border-color: var(--border);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.book-counts p:first-child {
+  grid-column: 1 / -1;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+.empty-state {
+  padding: 2.25rem 1rem;
+  color: var(--muted);
+  background: var(--surface-muted);
+  border: 1px dashed #b8c3ba;
+  border-radius: 0.65rem;
+  text-align: center;
+}
+
+.empty-state-icon {
+  position: relative;
+  width: 3rem;
+  height: 2.2rem;
+  margin: 0 auto 1rem;
+  background: var(--primary);
+  border-radius: 0.25rem 0.4rem 0.4rem 0.25rem;
+  box-shadow: inset 0.25rem 0 0 rgba(255, 255, 255, 0.16);
+}
+
+.empty-state-icon::before {
+  position: absolute;
+  top: 0.45rem;
+  left: 0.65rem;
+  width: 1.7rem;
+  height: 0.15rem;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0.45rem 0 rgba(255, 255, 255, 0.75);
+  content: "";
+}
+
+.book-list {
+  gap: 0.9rem;
+}
+
+.book-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.1rem;
+  background: var(--surface);
+  border-color: var(--border);
+  border-radius: 0.65rem;
+  box-shadow: 0 0.35rem 1rem rgba(36, 51, 45, 0.05);
+}
+
+.book-item h3 {
+  min-height: 2.7rem;
+  overflow-wrap: anywhere;
+  color: var(--primary-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+}
+
+.book-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.status-to-read {
+  color: #73500b;
+  background: #f8e8b5;
+}
+
+.status-reading {
+  color: #15516b;
+  background: #cceaf3;
+}
+
+.status-finished {
+  color: #235b3c;
+  background: #d4ecd8;
+}
+
+.delete-button {
+  margin-top: auto;
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.delete-button:hover {
+  background: #812d28;
+}
+
+@media (min-width: 700px) {
+  .site-main {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 1200px;
+  }
+
+  .book-counts {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .book-counts p:first-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 699px) {
+  .site-main {
+    grid-template-columns: 1fr;
+    padding-top: 1.25rem;
+  }
+
+  .book-list {
+    grid-template-columns: 1fr;
+  }
+
+  .site-header {
+    padding-top: 2.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header,
+  .site-main,
+  .site-footer {
+    width: min(100% - 1rem, 1100px);
+  }
+
+  .site-main section {
+    padding: 1rem;
+  }
+}

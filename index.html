@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Book Tracker</h1>
+    <p>Keep track of the books you want to read.</p>
+  </header>
+
+  <main class="site-main">
+    <section aria-labelledby="add-book-heading">
+      <h2 id="add-book-heading">Add a book</h2>
+
+      <form id="book-form" novalidate>
+        <div class="form-field">
+          <label for="book-title">Title</label>
+          <input
+            type="text"
+            id="book-title"
+            name="title"
+            placeholder="Enter the book title"
+            autocomplete="off"
+            required
+            aria-describedby="title-error"
+          >
+          <p class="validation-message" id="title-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="book-author">Author</label>
+          <input
+            type="text"
+            id="book-author"
+            name="author"
+            placeholder="Enter the author's name"
+            autocomplete="off"
+            required
+            aria-describedby="author-error"
+          >
+          <p class="validation-message" id="author-error" aria-live="polite"></p>
+        </div>
+
+        <div class="form-field">
+          <label for="book-status">Reading status</label>
+          <select id="book-status" name="status">
+            <option value="To read">To read</option>
+            <option value="Reading">Reading</option>
+            <option value="Finished">Finished</option>
+          </select>
+        </div>
+
+        <button type="submit">Add Book</button>
+        <p class="storage-message" id="storage-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section aria-labelledby="book-list-heading">
+      <h2 id="book-list-heading">Your books</h2>
+      <div id="book-counts" class="book-counts" aria-live="polite"></div>
+      <div class="search-field">
+        <label for="book-search">Search books</label>
+        <input
+          type="search"
+          id="book-search"
+          placeholder="Search by title or author"
+          autocomplete="off"
+        >
+      </div>
+      <div id="book-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Book Tracker</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
